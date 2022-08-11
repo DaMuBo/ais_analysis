@@ -2,14 +2,12 @@
 Wrapping the loading of the backup function and getting the configurations from the connection files
 """
 import sys
-import logging
+from pathlib import Path
 
 import yaml
 
 from functions.utils import get_folder
 from functions.database import load_backup
-from pathlib import Path
-import yaml
 
 if __name__ == '__main__':
     curr_folder = get_folder()
