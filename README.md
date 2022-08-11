@@ -7,6 +7,8 @@ Dies ermöglicht die interaktive Untersuchung der Daten.
 ## Contents
 * backup_load.py
 * experiments
+  * exploratives
+    * 01_data_exploratives.ipynb
   * k_means_clustering
   * time_series
   * anomaly_detection
