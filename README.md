@@ -11,7 +11,9 @@ Dies ermöglicht die interaktive Untersuchung der Daten.
   * time_series
   * anomaly_detection
 * functions
+  * database.py
   * utils.py
+* logs
 * connection.yml
 * connection_example.yml
 * README.md
@@ -21,11 +23,15 @@ Dies ermöglicht die interaktive Untersuchung der Daten.
 ## Usage
 Zuerst die Daten von dem Remote Server aus dem Projekt für das Streaming über backup_load.py reinladen.
 
-connections.yml "path/to/backup/file"
+python backup_load.py "path/to/backup/file"
+
+Es sollte auch das Passwort für die Datenbank nochmal abgefragt werden.
 
 Wenn dies erfolgreich ist, dann sind die connection.yml richtig konfiguriert. Ansonsten die Daten abgleichen mit den Credentials für die Datenbank.
 Wenn das eingerichtet ist können die Experimente durchgeführt werden oder die App ausgeführt werden.
 
+
+## Other
 
 ## Contacts
 * Author: Daniel Müller
