@@ -37,12 +37,14 @@ class SimpleOutlierMask():
             'mean': self.mean,
             'sstd': self.sstd
         }
-        pickle.dump(output, open(location, 'wb'))
+        with open(location, 'wb') as file:
+            pickle.dump(output, file)
 
     def load(self,location):
         """
         loading the strucutre of the column from a file in to the object
         """
-        data = pickle.load(open(location, 'rb'))
+        with open(location, 'rb') as file:
+            data = pickle.load(file)
         self.mean = data['mean']
         self.sstd = data['sstd']

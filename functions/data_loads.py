@@ -24,8 +24,8 @@ def get_columns(engine,tablename='tbl_positionnew',ignore_columns = ['type','alt
     FROM INFORMATION_SCHEMA.COLUMNS
     WHERE table_schema = 'public' AND table_name = '{tablename}' AND column_name NOT IN ('{"','".join(ignore_columns)}')
     """
-    df = pd.read_sql(sqlstring,con=engine)
-    return df['column_name'].tolist()
+    data = pd.read_sql(sqlstring,con=engine)
+    return data['column_name'].tolist()
 
 def load_data(engine,tablename,columns, dates = []):
     """
@@ -53,5 +53,5 @@ def load_data(engine,tablename,columns, dates = []):
     """
     if len(dates) > 0:
         sqlstring = sqlstring + f" WHERE CAST(msgtime AS DATE) BETWEEN CAST('{dates[0]}' AS DATE) AND CAST('{dates[1]}' AS DATE)"
-    df = pd.read_sql(sqlstring,con=engine)
-    return df
+    data = pd.read_sql(sqlstring,con=engine)
+    return data
