@@ -1,6 +1,8 @@
 """
 some functions for data loads of defined data
 """
+import pandas as pd
+
 def get_columns(engine,tablename='tbl_positionnew',ignore_columns = ['type','altitude']):
     """
     Get the columns from the database schema which are not to be ignored while loading data

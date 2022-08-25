@@ -2,8 +2,9 @@
 some functions and methods for data cleaning of defined data
 """
 import pickle
+import pandas as pd
 
-class simple_outlier_mask():
+class SimpleOutlierMask():
     """
     simple class for learning on training data a structure of the column and what are the outliers to be deleted
     """
