@@ -7,6 +7,7 @@ Dies ermöglicht die interaktive Untersuchung der Daten.
 ## Contents
 * backup_load.py
 * experiments
+  * 01_data_exploratives.ipynb
   * k_means_clustering
   * time_series
   * anomaly_detection
@@ -30,6 +31,7 @@ Es sollte auch das Passwort für die Datenbank nochmal abgefragt werden.
 Wenn dies erfolgreich ist, dann sind die connection.yml richtig konfiguriert. Ansonsten die Daten abgleichen mit den Credentials für die Datenbank.
 Wenn das eingerichtet ist können die Experimente durchgeführt werden oder die App ausgeführt werden.
 
+Unter Experiments finden sich die verschiedenen Experimente die durchgeführt wurden für die Analyse.
 
 ## Other
 
