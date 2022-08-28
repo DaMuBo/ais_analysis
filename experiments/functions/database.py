@@ -21,10 +21,10 @@ def load_backup(host,port, dbname, user, password, filename, pg_dump_path ='C:/P
     """
     Loading the backUp in the given Database
     """
-    pg_dump = sorted(Path(pg_dump_path).glob('**/bin/psql.exe'))[0]
-    pg_path = pg_dump.parent
-    dumper = Path("./psql")
-    cmd = f'''cd "{str(pg_path)}" && type {str(filename)} | {str(dumper)} --dbname={dbname} -h {host} -p {port} -U {user} '''
+    pg_file = sorted(Path(pg_dump_path).glob('**/bin/psql.exe'))[0]
+    pg_path = pg_file.parent
+    commander = Path("./psql")
+    cmd = f'''cd "{str(pg_path)}" && type {str(filename)} | {str(commander)} --dbname={dbname} -h {host} -p {port} -U {user} '''
     print(cmd)
     popen = Popen(cmd,stdin=PIPE,stderr=PIPE, universal_newlines=True, shell=True)
     return popen.communicate(f"{password}\n")

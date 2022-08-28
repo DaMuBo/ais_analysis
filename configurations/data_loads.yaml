@@ -1,2 +1,2 @@
 position_unrel_cols : ['type','altitude']
-static_unrel_cols : ['type','reportclass']
+static_unrel_cols : ['type','reportclass','imonumber','callsign']
