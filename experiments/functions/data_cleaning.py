@@ -56,11 +56,11 @@ def x_coord(x,y):
     """
     lat = float(x)
     lon = float(y)
-    
+
     r_major = 6378137.000
     x = r_major * np.radians(lon)
     scale = x/lon
-    y = 180.0/np.pi * np.log(np.tan(np.pi/4.0 + 
+    y = 180.0/np.pi * np.log(np.tan(np.pi/4.0 +
         lat * (np.pi/180.0)/2.0)) * scale
     return (x, y)
 

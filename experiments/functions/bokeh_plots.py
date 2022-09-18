@@ -1,15 +1,8 @@
 """
 This module holds functions and classes for nice and interactive visualisations to be used.
 """
-
-import os
-import sys
-
-import pandas as pd
-
-from bokeh.plotting import figure,save, output_file, show
+from bokeh.plotting import figure
 from bokeh.tile_providers import CARTODBPOSITRON, get_provider
-from bokeh.models import ColumnDataSource
 from bokeh.palettes import Category10
 
 from sklearn.preprocessing import MinMaxScaler
