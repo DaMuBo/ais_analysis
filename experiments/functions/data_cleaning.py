@@ -50,25 +50,25 @@ class SimpleOutlierMask():
         self.mean = data['mean']
         self.sstd = data['sstd']
 
-def x_coord(x,y):
+def x_coord(x_axis,y_axis):
     """
     This function is transforming the correct coordinates for visualising the data points on a 2D Plot
     """
-    lat = float(x)
-    lon = float(y)
+    lat = float(x_axis)
+    lon = float(y_axis)
 
     r_major = 6378137.000
-    x = r_major * np.radians(lon)
-    scale = x/lon
-    y = 180.0/np.pi * np.log(np.tan(np.pi/4.0 +
+    x_axis = r_major * np.radians(lon)
+    scale = x_axis/lon
+    y_axis = 180.0/np.pi * np.log(np.tan(np.pi/4.0 +
         lat * (np.pi/180.0)/2.0)) * scale
-    return (x, y)
+    return (x_axis, y_axis)
 
-def create_mercator(df,targetcolumns= {'x':'lat','y':'lon'}):
+def create_mercator(data,targetcolumns= {'x':'lat','y':'lon'}):
     """
     this function performs the mercator transformation on the target_columns
     """
     x_t = targetcolumns['x'] + '_merc'
     y_t = targetcolumns['y'] + '_merc'
-    df[[x_t,y_t]] = df[[targetcolumns['x'],targetcolumns['y']]].apply(lambda x:x_coord(x[targetcolumns['x']],x[targetcolumns['y']]),axis = 1, result_type='expand')
+    data[[x_t,y_t]] = data[[targetcolumns['x'],targetcolumns['y']]].apply(lambda x:x_coord(x[targetcolumns['x']],x[targetcolumns['y']]),axis = 1, result_type='expand')
     return df
